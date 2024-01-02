@@ -30,5 +30,6 @@ namespace DoAn_QuanLyBanHang.BO
         {
             return tkdao.KiemTraMatKhau(taikhoan, matkhau);
         }
+
     }
 }

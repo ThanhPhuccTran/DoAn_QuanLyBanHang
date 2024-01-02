@@ -20,5 +20,10 @@ namespace DoAn_QuanLyBanHang.BEAN
             this.phanquyen = phanquyen;
         }
 
+       /* override
+        public string toString()
+        {
+            return "TaiKhoan [username=" + username + ",password=" + password + ",phanquyen=" + phanquyen + "]";
+        }*/
     }
 }
