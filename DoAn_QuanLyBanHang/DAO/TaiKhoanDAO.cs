@@ -104,7 +104,7 @@ namespace DoAn_QuanLyBanHang.DAO
 
             cmd.Parameters.AddWithValue("@TaiKhoan", tentk);
             cmd.Parameters.AddWithValue("@MatKhau", matkhau);
-            cmd.Parameters.AddWithValue("@PhanQuyen", 1);
+            cmd.Parameters.AddWithValue("@PhanQuyen", phanquyen);
             cmd.ExecuteNonQuery();
         }
 

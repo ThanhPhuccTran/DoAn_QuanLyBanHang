@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace DoAn_QuanLyBanHang
@@ -14,6 +15,7 @@ namespace DoAn_QuanLyBanHang
     public partial class FormMain : Form
     {
         LoaiHangBO loaibo = new LoaiHangBO();
+        
         public FormMain()
         {
             InitializeComponent();
@@ -36,10 +38,12 @@ namespace DoAn_QuanLyBanHang
             txtMaloai.Clear();
             txtTenLoai.Clear();
         }
-
+        
         private void label5_Click(object sender, EventArgs e)
         {
-
+            FrmNhanVien fd = new FrmNhanVien();
+            fd.Show();
+            this.Hide();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -145,6 +149,37 @@ namespace DoAn_QuanLyBanHang
             FormSanPham fd = new FormSanPham();
             fd.Show();
             this.Hide();
+        }
+
+        private void lblTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            FormQuanLyHoaDon fd = new FormQuanLyHoaDon();
+            fd.Show();
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            FormThongke fd = new FormThongke();
+            fd.Show();
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            FormDangNhap fd = new FormDangNhap();
+            fd.Show();
+            this.Hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

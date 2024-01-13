@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTime = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,22 +56,20 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.grdDanhSach = new System.Windows.Forms.DataGridView();
-            this.qL_BanHang_DienTuDataSet = new DoAn_QuanLyBanHang.QL_BanHang_DienTuDataSet();
-            this.loaiHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.loaiHangTableAdapter = new DoAn_QuanLyBanHang.QL_BanHang_DienTuDataSetTableAdapters.LoaiHangTableAdapter();
             this.maloaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenloaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTime = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.loaiHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qL_BanHang_DienTuDataSet = new DoAn_QuanLyBanHang.QL_BanHang_DienTuDataSet();
+            this.loaiHangTableAdapter = new DoAn_QuanLyBanHang.QL_BanHang_DienTuDataSetTableAdapters.LoaiHangTableAdapter();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDanhSach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qL_BanHang_DienTuDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_BanHang_DienTuDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,6 +87,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 759);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblTime
+            // 
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(56, 140);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(129, 38);
+            this.lblTime.TabIndex = 3;
+            this.lblTime.Text = "00:00:00";
+            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
             // 
             // panel3
             // 
@@ -95,6 +108,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(257, 152);
             this.panel3.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DoAn_QuanLyBanHang.Properties.Resources.attachment_144613571_preview_rev_1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(257, 159);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label5
             // 
@@ -115,9 +138,10 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(70, 584);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 25);
+            this.label6.Size = new System.Drawing.Size(103, 25);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Thanh Toán";
+            this.label6.Text = "Thống kê";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label4
             // 
@@ -126,9 +150,10 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(71, 495);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 25);
+            this.label4.Size = new System.Drawing.Size(96, 25);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Thống kê";
+            this.label4.Text = "Hóa Đơn";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -172,6 +197,7 @@
             this.label1.Size = new System.Drawing.Size(114, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng Xuất";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel4
             // 
@@ -316,34 +342,20 @@
             this.grdDanhSach.DataSource = this.loaiHangBindingSource;
             this.grdDanhSach.Location = new System.Drawing.Point(257, 398);
             this.grdDanhSach.Name = "grdDanhSach";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdDanhSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdDanhSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grdDanhSach.RowHeadersWidth = 51;
             this.grdDanhSach.RowTemplate.Height = 24;
             this.grdDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdDanhSach.Size = new System.Drawing.Size(939, 362);
             this.grdDanhSach.TabIndex = 9;
             this.grdDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDanhSach_CellContentClick);
-            // 
-            // qL_BanHang_DienTuDataSet
-            // 
-            this.qL_BanHang_DienTuDataSet.DataSetName = "QL_BanHang_DienTuDataSet";
-            this.qL_BanHang_DienTuDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // loaiHangBindingSource
-            // 
-            this.loaiHangBindingSource.DataMember = "LoaiHang";
-            this.loaiHangBindingSource.DataSource = this.qL_BanHang_DienTuDataSet;
-            // 
-            // loaiHangTableAdapter
-            // 
-            this.loaiHangTableAdapter.ClearBeforeFill = true;
             // 
             // maloaiDataGridViewTextBoxColumn
             // 
@@ -362,30 +374,23 @@
             this.tenloaiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tenloaiDataGridViewTextBoxColumn.Name = "tenloaiDataGridViewTextBoxColumn";
             // 
-            // lblTime
+            // loaiHangBindingSource
             // 
-            this.lblTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(56, 140);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(129, 38);
-            this.lblTime.TabIndex = 3;
-            this.lblTime.Text = "00:00:00";
+            this.loaiHangBindingSource.DataMember = "LoaiHang";
+            this.loaiHangBindingSource.DataSource = this.qL_BanHang_DienTuDataSet;
+            // 
+            // qL_BanHang_DienTuDataSet
+            // 
+            this.qL_BanHang_DienTuDataSet.DataSetName = "QL_BanHang_DienTuDataSet";
+            this.qL_BanHang_DienTuDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // loaiHangTableAdapter
+            // 
+            this.loaiHangTableAdapter.ClearBeforeFill = true;
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DoAn_QuanLyBanHang.Properties.Resources.attachment_144613571_preview_rev_1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(257, 159);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // FormMain
             // 
@@ -414,14 +419,14 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDanhSach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qL_BanHang_DienTuDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_BanHang_DienTuDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

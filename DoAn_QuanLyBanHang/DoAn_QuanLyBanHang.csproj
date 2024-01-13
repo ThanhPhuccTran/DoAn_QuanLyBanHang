@@ -52,16 +52,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BEAN\ChiTietHoaDon.cs" />
+    <Compile Include="BEAN\HoaDon.cs" />
     <Compile Include="BEAN\LoaiHang.cs" />
+    <Compile Include="BEAN\NhanVien.cs" />
     <Compile Include="BEAN\SanPham.cs" />
     <Compile Include="BEAN\TaiKhoan.cs" />
+    <Compile Include="BO\ChiTietHoaDonBO.cs" />
+    <Compile Include="BO\HoaDonBO.cs" />
+    <Compile Include="BO\LichSuBO.cs" />
     <Compile Include="BO\LoaiHangBO.cs" />
+    <Compile Include="BO\NhanVienBO.cs" />
     <Compile Include="BO\SanPhamBO.cs" />
     <Compile Include="BO\TaiKhoanBo.cs" />
+    <Compile Include="DAO\ChiTietHoaDonDAO.cs" />
+    <Compile Include="DAO\HoaDonDAO.cs" />
     <Compile Include="DAO\KetNoi.cs" />
     <Compile Include="DAO\LoaiHangDAO.cs" />
+    <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DAO\SanPhamDAO.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
+    <Compile Include="FormChiTietHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChiTietHD.Designer.cs">
+      <DependentUpon>FormChiTietHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormcuaNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormcuaNhanVien.Designer.cs">
+      <DependentUpon>FormcuaNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,17 +96,47 @@
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHoaDonNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHoaDonNhanVien.Designer.cs">
+      <DependentUpon>FormHoaDonNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHoaDonNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHoaDonNV.Designer.cs">
+      <DependentUpon>FormHoaDonNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQuanLyHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLyHoaDon.Designer.cs">
+      <DependentUpon>FormQuanLyHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSanPham.Designer.cs">
       <DependentUpon>FormSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThongke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongke.Designer.cs">
+      <DependentUpon>FormThongke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNhanVien.Designer.cs">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,17 +145,58 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_BanHang_DienTuDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QL_BanHang_DienTuDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_BanHang_DienTuDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QL_BanHang_DienTuDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_BanHang_DienTuDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QL_BanHang_DienTuDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_BanHang_DienTuDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QL_BanHang_DienTuDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_BanHang_DienTuDataSet4.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormChiTietHD.resx">
+      <DependentUpon>FormChiTietHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormcuaNhanVien.resx">
+      <DependentUpon>FormcuaNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDangKy.resx">
       <DependentUpon>FormDangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormHoaDonNhanVien.resx">
+      <DependentUpon>FormHoaDonNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHoaDonNV.resx">
+      <DependentUpon>FormHoaDonNV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormQuanLyHoaDon.resx">
+      <DependentUpon>FormQuanLyHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSanPham.resx">
       <DependentUpon>FormSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThongke.resx">
+      <DependentUpon>FormThongke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNhanVien.resx">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -116,6 +209,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DoAn_QuanLyBanHang.BEAN.NhanVien.datasource" />
+    <None Include="Properties\DataSources\DoAn_QuanLyBanHang.BEAN.SanPham.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -140,6 +235,50 @@
     </None>
     <None Include="QL_BanHang_DienTuDataSet.xss">
       <DependentUpon>QL_BanHang_DienTuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QL_BanHang_DienTuDataSet1.xsc">
+      <DependentUpon>QL_BanHang_DienTuDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QL_BanHang_DienTuDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_BanHang_DienTuDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_BanHang_DienTuDataSet1.xss">
+      <DependentUpon>QL_BanHang_DienTuDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QL_BanHang_DienTuDataSet2.xsc">
+      <DependentUpon>QL_BanHang_DienTuDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QL_BanHang_DienTuDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_BanHang_DienTuDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_BanHang_DienTuDataSet2.xss">
+      <DependentUpon>QL_BanHang_DienTuDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QL_BanHang_DienTuDataSet3.xsc">
+      <DependentUpon>QL_BanHang_DienTuDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QL_BanHang_DienTuDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_BanHang_DienTuDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_BanHang_DienTuDataSet3.xss">
+      <DependentUpon>QL_BanHang_DienTuDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QL_BanHang_DienTuDataSet4.xsc">
+      <DependentUpon>QL_BanHang_DienTuDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="QL_BanHang_DienTuDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_BanHang_DienTuDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_BanHang_DienTuDataSet4.xss">
+      <DependentUpon>QL_BanHang_DienTuDataSet4.xsd</DependentUpon>
     </None>
     <None Include="Resources\laptop-store-logo-design-template-b8cb62247e5e2338cd49c7961aa59c08_screen.jpg" />
   </ItemGroup>

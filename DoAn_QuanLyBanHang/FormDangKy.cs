@@ -25,7 +25,7 @@ namespace DoAn_QuanLyBanHang
         {
             string tendky = txtTaiKhoan.Text;
             string matkhau = txtMatKhau.Text;
-            string phanquyen = "1";
+            string phanquyen = radioButton1.Checked ? "1" : "0";
             if (string.IsNullOrEmpty(tendky) || string.IsNullOrEmpty(matkhau))
             {
                 MessageBox.Show("Bạn cần phải nhập đầy đủ thông tin!");

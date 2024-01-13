@@ -16,6 +16,7 @@ namespace DoAn_QuanLyBanHang
     public partial class FormDangNhap : Form
     {
         TaiKhoanBo tkbo = new TaiKhoanBo();
+        public static TaiKhoan taikhoan = null;
         public FormDangNhap()
         {
             InitializeComponent();
@@ -45,13 +46,22 @@ namespace DoAn_QuanLyBanHang
                 }
                 else
                 {
-                    TaiKhoan taikhoan = tkbo.dangnhap(tendn, matkhau);
+                     taikhoan = tkbo.dangnhap(tendn, matkhau);
                     if (taikhoan != null)
-                    {
-                        MessageBox.Show("Đăng nhập thành công");
-                        Hide();
-                        var f = new FormMain();
-                        f.ShowDialog();
+                    {   
+                        if(taikhoan.phanquyen == "0") {
+                            MessageBox.Show("Đăng nhập thành công");
+                            Hide();
+                            var f = new FormMain();
+                            f.ShowDialog();
+                        }
+                        else
+                            if(taikhoan.phanquyen == "1"){
+                            Hide();
+                            var f = new FormcuaNhanVien();
+                            f.ShowDialog();
+
+                        }
                     }
                     else
                     {

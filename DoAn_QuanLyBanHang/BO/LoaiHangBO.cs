@@ -37,5 +37,9 @@ namespace DoAn_QuanLyBanHang.BO
         {
             return loaibo.Xoa(maloai);
         }
+        public string TenLoai(string maloai)
+        {
+            return loaibo.LayTenLoai(maloai);
+        }
     }
 }

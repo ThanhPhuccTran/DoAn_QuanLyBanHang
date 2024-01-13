@@ -62,7 +62,7 @@
             this.txtTaiKhoan.Location = new System.Drawing.Point(146, 105);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(204, 22);
-            this.txtTaiKhoan.TabIndex = 2;
+            this.txtTaiKhoan.TabIndex = 0;
             // 
             // label3
             // 
@@ -78,8 +78,9 @@
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(146, 179);
             this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(204, 22);
-            this.txtMatKhau.TabIndex = 2;
+            this.txtMatKhau.TabIndex = 1;
             // 
             // btnDangNhap
             // 
@@ -87,7 +88,7 @@
             this.btnDangNhap.Location = new System.Drawing.Point(178, 239);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(138, 49);
-            this.btnDangNhap.TabIndex = 3;
+            this.btnDangNhap.TabIndex = 2;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
@@ -98,7 +99,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(213, 318);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(55, 16);
-            this.linkLabel1.TabIndex = 4;
+            this.linkLabel1.TabIndex = 3;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Đăng kí ";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
@@ -116,6 +117,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

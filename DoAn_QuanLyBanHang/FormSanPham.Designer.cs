@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTime = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -62,7 +60,6 @@
             this.loaiHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loaiHangTableAdapter = new DoAn_QuanLyBanHang.QL_BanHang_DienTuDataSetTableAdapters.LoaiHangTableAdapter();
             this.imageAnh = new System.Windows.Forms.PictureBox();
-            this.grdSanPham = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -71,6 +68,23 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtAnh = new System.Windows.Forms.TextBox();
             this.btnMo = new System.Windows.Forms.Button();
+            this.grdSanPham2 = new System.Windows.Forms.DataGridView();
+            this.loaiHangBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.qL_BanHang_DienTuDataSet1 = new DoAn_QuanLyBanHang.QL_BanHang_DienTuDataSet1();
+            this.sanPhamBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sanPhamTableAdapter = new DoAn_QuanLyBanHang.QL_BanHang_DienTuDataSet1TableAdapters.SanPhamTableAdapter();
+            this.qLBanHangDienTuDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbxFill = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.masanphamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tensanphamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maloaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongiabanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sanPhamBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,7 +93,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.qL_BanHang_DienTuDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageAnh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdSanPham)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSanPham2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiHangBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_BanHang_DienTuDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLBanHangDienTuDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -138,6 +158,7 @@
             this.label5.Size = new System.Drawing.Size(113, 25);
             this.label5.TabIndex = 1;
             this.label5.Text = "Nhân Viên";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -149,6 +170,7 @@
             this.label6.Size = new System.Drawing.Size(130, 25);
             this.label6.TabIndex = 1;
             this.label6.Text = "Thanh Toán";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label4
             // 
@@ -157,9 +179,10 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(71, 495);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 25);
+            this.label4.Size = new System.Drawing.Size(93, 25);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Thống kê";
+            this.label4.Text = "Hóa đơn";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -171,6 +194,7 @@
             this.label3.Size = new System.Drawing.Size(112, 25);
             this.label3.TabIndex = 1;
             this.label3.Text = "Sản Phẩm";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // LoaiSanPham
             // 
@@ -203,6 +227,7 @@
             this.label1.Size = new System.Drawing.Size(114, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng Xuất";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel4
             // 
@@ -348,6 +373,7 @@
             this.cbxLoai.Name = "cbxLoai";
             this.cbxLoai.Size = new System.Drawing.Size(117, 24);
             this.cbxLoai.TabIndex = 11;
+            this.cbxLoai.Text = "Chọn loại";
             // 
             // qL_BanHang_DienTuDataSet
             // 
@@ -372,58 +398,7 @@
             this.imageAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageAnh.TabIndex = 12;
             this.imageAnh.TabStop = false;
-            // 
-            // grdSanPham
-            // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.grdSanPham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.grdSanPham.ColumnHeadersHeight = 4;
-            this.grdSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdSanPham.DefaultCellStyle = dataGridViewCellStyle9;
-            this.grdSanPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.grdSanPham.Location = new System.Drawing.Point(265, 388);
-            this.grdSanPham.Name = "grdSanPham";
-            this.grdSanPham.RowHeadersVisible = false;
-            this.grdSanPham.RowHeadersWidth = 51;
-            this.grdSanPham.RowTemplate.Height = 24;
-            this.grdSanPham.Size = new System.Drawing.Size(916, 354);
-            this.grdSanPham.TabIndex = 13;
-            this.grdSanPham.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.grdSanPham.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.grdSanPham.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.grdSanPham.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.grdSanPham.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.grdSanPham.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.grdSanPham.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.grdSanPham.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.grdSanPham.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.grdSanPham.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdSanPham.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.grdSanPham.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.grdSanPham.ThemeStyle.HeaderStyle.Height = 4;
-            this.grdSanPham.ThemeStyle.ReadOnly = false;
-            this.grdSanPham.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.grdSanPham.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.grdSanPham.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdSanPham.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.grdSanPham.ThemeStyle.RowsStyle.Height = 24;
-            this.grdSanPham.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.grdSanPham.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.imageAnh.Click += new System.EventHandler(this.imageAnh_Click);
             // 
             // btnThem
             // 
@@ -443,6 +418,7 @@
             this.btnXoa.TabIndex = 14;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -452,6 +428,7 @@
             this.btnSua.TabIndex = 14;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnLoad
             // 
@@ -461,6 +438,7 @@
             this.btnLoad.TabIndex = 14;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // timer1
             // 
@@ -494,12 +472,163 @@
             this.btnMo.UseVisualStyleBackColor = true;
             this.btnMo.Click += new System.EventHandler(this.btnMo_Click);
             // 
+            // grdSanPham2
+            // 
+            this.grdSanPham2.AllowUserToAddRows = false;
+            this.grdSanPham2.AllowUserToDeleteRows = false;
+            this.grdSanPham2.AllowUserToOrderColumns = true;
+            this.grdSanPham2.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdSanPham2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.grdSanPham2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdSanPham2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.masanphamDataGridViewTextBoxColumn,
+            this.tensanphamDataGridViewTextBoxColumn,
+            this.maloaiDataGridViewTextBoxColumn,
+            this.soluongDataGridViewTextBoxColumn,
+            this.dongiabanDataGridViewTextBoxColumn,
+            this.anhDataGridViewTextBoxColumn});
+            this.grdSanPham2.DataSource = this.sanPhamBindingSource2;
+            this.grdSanPham2.Location = new System.Drawing.Point(263, 406);
+            this.grdSanPham2.Name = "grdSanPham2";
+            this.grdSanPham2.ReadOnly = true;
+            this.grdSanPham2.RowHeadersWidth = 51;
+            this.grdSanPham2.RowTemplate.Height = 24;
+            this.grdSanPham2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdSanPham2.Size = new System.Drawing.Size(929, 355);
+            this.grdSanPham2.TabIndex = 18;
+            this.grdSanPham2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdSanPham_CellContentClick);
+            this.grdSanPham2.Click += new System.EventHandler(this.grdSanPham2_Click);
+            // 
+            // loaiHangBindingSource1
+            // 
+            this.loaiHangBindingSource1.DataMember = "LoaiHang";
+            this.loaiHangBindingSource1.DataSource = this.qL_BanHang_DienTuDataSet;
+            // 
+            // qL_BanHang_DienTuDataSet1
+            // 
+            this.qL_BanHang_DienTuDataSet1.DataSetName = "QL_BanHang_DienTuDataSet1";
+            this.qL_BanHang_DienTuDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sanPhamBindingSource1
+            // 
+            this.sanPhamBindingSource1.DataMember = "SanPham";
+            this.sanPhamBindingSource1.DataSource = this.qL_BanHang_DienTuDataSet1;
+            // 
+            // sanPhamTableAdapter
+            // 
+            this.sanPhamTableAdapter.ClearBeforeFill = true;
+            // 
+            // qLBanHangDienTuDataSetBindingSource
+            // 
+            this.qLBanHangDienTuDataSetBindingSource.DataSource = this.qL_BanHang_DienTuDataSet;
+            this.qLBanHangDienTuDataSetBindingSource.Position = 0;
+            // 
+            // cbxFill
+            // 
+            this.cbxFill.FormattingEnabled = true;
+            this.cbxFill.Location = new System.Drawing.Point(275, 361);
+            this.cbxFill.Name = "cbxFill";
+            this.cbxFill.Size = new System.Drawing.Size(148, 24);
+            this.cbxFill.TabIndex = 19;
+            this.cbxFill.Text = "Lọc theo mã loại";
+            this.cbxFill.SelectedIndexChanged += new System.EventHandler(this.cbxFill_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1095, 364);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Tìm Kiếm";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(921, 364);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(167, 22);
+            this.txtTimKiem.TabIndex = 21;
+            // 
+            // masanphamDataGridViewTextBoxColumn
+            // 
+            this.masanphamDataGridViewTextBoxColumn.DataPropertyName = "masanpham";
+            this.masanphamDataGridViewTextBoxColumn.HeaderText = "masanpham";
+            this.masanphamDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.masanphamDataGridViewTextBoxColumn.Name = "masanphamDataGridViewTextBoxColumn";
+            this.masanphamDataGridViewTextBoxColumn.ReadOnly = true;
+            this.masanphamDataGridViewTextBoxColumn.Width = 146;
+            // 
+            // tensanphamDataGridViewTextBoxColumn
+            // 
+            this.tensanphamDataGridViewTextBoxColumn.DataPropertyName = "tensanpham";
+            this.tensanphamDataGridViewTextBoxColumn.HeaderText = "tensanpham";
+            this.tensanphamDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tensanphamDataGridViewTextBoxColumn.Name = "tensanphamDataGridViewTextBoxColumn";
+            this.tensanphamDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tensanphamDataGridViewTextBoxColumn.Width = 146;
+            // 
+            // maloaiDataGridViewTextBoxColumn
+            // 
+            this.maloaiDataGridViewTextBoxColumn.DataPropertyName = "maloai";
+            this.maloaiDataGridViewTextBoxColumn.HeaderText = "maloai";
+            this.maloaiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maloaiDataGridViewTextBoxColumn.Name = "maloaiDataGridViewTextBoxColumn";
+            this.maloaiDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maloaiDataGridViewTextBoxColumn.Width = 146;
+            // 
+            // soluongDataGridViewTextBoxColumn
+            // 
+            this.soluongDataGridViewTextBoxColumn.DataPropertyName = "soluong";
+            this.soluongDataGridViewTextBoxColumn.HeaderText = "soluong";
+            this.soluongDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.soluongDataGridViewTextBoxColumn.Name = "soluongDataGridViewTextBoxColumn";
+            this.soluongDataGridViewTextBoxColumn.ReadOnly = true;
+            this.soluongDataGridViewTextBoxColumn.Width = 146;
+            // 
+            // dongiabanDataGridViewTextBoxColumn
+            // 
+            this.dongiabanDataGridViewTextBoxColumn.DataPropertyName = "dongiaban";
+            this.dongiabanDataGridViewTextBoxColumn.HeaderText = "dongiaban";
+            this.dongiabanDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dongiabanDataGridViewTextBoxColumn.Name = "dongiabanDataGridViewTextBoxColumn";
+            this.dongiabanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dongiabanDataGridViewTextBoxColumn.Width = 146;
+            // 
+            // anhDataGridViewTextBoxColumn
+            // 
+            this.anhDataGridViewTextBoxColumn.DataPropertyName = "anh";
+            this.anhDataGridViewTextBoxColumn.HeaderText = "anh";
+            this.anhDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.anhDataGridViewTextBoxColumn.Name = "anhDataGridViewTextBoxColumn";
+            this.anhDataGridViewTextBoxColumn.ReadOnly = true;
+            this.anhDataGridViewTextBoxColumn.Width = 146;
+            // 
+            // sanPhamBindingSource2
+            // 
+            this.sanPhamBindingSource2.DataSource = typeof(DoAn_QuanLyBanHang.BEAN.SanPham);
+            // 
+            // sanPhamBindingSource
+            // 
+            this.sanPhamBindingSource.DataSource = typeof(DoAn_QuanLyBanHang.BEAN.SanPham);
+            // 
             // FormSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1193, 753);
+            this.Controls.Add(this.txtTimKiem);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cbxFill);
+            this.Controls.Add(this.grdSanPham2);
             this.Controls.Add(this.btnMo);
             this.Controls.Add(this.txtAnh);
             this.Controls.Add(this.label15);
@@ -507,7 +636,6 @@
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.grdSanPham);
             this.Controls.Add(this.imageAnh);
             this.Controls.Add(this.cbxLoai);
             this.Controls.Add(this.txtGia);
@@ -539,7 +667,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.qL_BanHang_DienTuDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiHangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageAnh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdSanPham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSanPham2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiHangBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_BanHang_DienTuDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLBanHangDienTuDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -577,7 +711,6 @@
         private System.Windows.Forms.BindingSource loaiHangBindingSource;
         private QL_BanHang_DienTuDataSetTableAdapters.LoaiHangTableAdapter loaiHangTableAdapter;
         private System.Windows.Forms.PictureBox imageAnh;
-        private Guna.UI2.WinForms.Guna2DataGridView grdSanPham;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
@@ -586,5 +719,22 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtAnh;
         private System.Windows.Forms.Button btnMo;
+        private System.Windows.Forms.DataGridView grdSanPham2;
+        private System.Windows.Forms.BindingSource sanPhamBindingSource;
+        private System.Windows.Forms.BindingSource loaiHangBindingSource1;
+        private QL_BanHang_DienTuDataSet1 qL_BanHang_DienTuDataSet1;
+        private System.Windows.Forms.BindingSource sanPhamBindingSource1;
+        private QL_BanHang_DienTuDataSet1TableAdapters.SanPhamTableAdapter sanPhamTableAdapter;
+        private System.Windows.Forms.BindingSource qLBanHangDienTuDataSetBindingSource;
+        private System.Windows.Forms.BindingSource sanPhamBindingSource2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn masanphamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tensanphamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maloaiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soluongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dongiabanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn anhDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox cbxFill;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtTimKiem;
     }
 }

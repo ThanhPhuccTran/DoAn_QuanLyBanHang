@@ -49,6 +49,26 @@ namespace DoAn_QuanLyBanHang.DAO
 
             return false;
         }
+        //lay ten loai
+        public string LayTenLoai(string maloai)
+        {
+            KetNoi kn = new KetNoi();
+            kn.MoKetNoi();
+
+            string sql = "SELECT tenloai FROM LoaiHang WHERE maloai = @MaHang";
+            SqlCommand cmd = new SqlCommand(sql, kn.sqlConn);
+            cmd.Parameters.AddWithValue("@MaHang", maloai);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            string tenloai = "";
+            if (reader.Read())
+            {
+                tenloai = reader["tenloai"].ToString();
+            }
+
+            kn.DongKetNoi();
+            return tenloai;
+        }
         public int ThemLoai(string maloai, string tenloai)
         {
             KetNoi kn = new KetNoi();
@@ -64,6 +84,7 @@ namespace DoAn_QuanLyBanHang.DAO
             kn.DongKetNoi();
             return rs;
         }
+
 
         public int SuaLoai(string maloai, string tenloaimoi)
         {
